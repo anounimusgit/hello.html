@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite</title>
+    <title>Convite com Imagens</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
 
         .container {
@@ -23,6 +24,7 @@
             padding: 30px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             max-width: 350px;
+            margin-bottom: 20px;
         }
 
         p {
@@ -59,6 +61,19 @@
         .button:hover {
             background-color: #ff3385;
         }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -71,6 +86,13 @@
             <button class="button" id="yesButton">Sim</button>
             <button class="button" id="noButton">Não</button>
         </div>
+    </div>
+
+    <!-- Adicionar as imagens carregadas no GitHub -->
+    <div class="image-container">
+        <img src="https://raw.githubusercontent.com/anounimusgit/hello.html/main/imagem1.png" alt="Imagem 1">
+        <img src="https://raw.githubusercontent.com/anounimusgit/hello.html/main/imagem2.png" alt="Imagem 2">
+        <img src="https://raw.githubusercontent.com/anounimusgit/hello.html/main/imagem3.png" alt="Imagem 3">
     </div>
 
     <script>
