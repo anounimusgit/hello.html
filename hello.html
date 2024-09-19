@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe6f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 350px;
+        }
+
+        p {
+            font-size: 22px;
+            color: #ff66b2;
+        }
+
+        .ps {
+            font-size: 14px;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        #noButton {
+            position: absolute;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            background-color: #ff66b2;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:active {
+            background-color: #ff3385;
+        }
+
+        .button:hover {
+            background-color: #ff3385;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p id="question">Você está ansiosa pra sair comigo sábado?</p>
+        <div class="ps">P.S.: Tente clicar no "não"</div>
+
+        <div>
+            <button class="button" id="yesButton">Sim</button>
+            <button class="button" id="noButton">Não</button>
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.getElementById("noButton");
+        const yesButton = document.getElementById("yesButton");
+        const questionText = document.getElementById("question");
+
+        yesButton.addEventListener("click", function () {
+            questionText.innerHTML = "Então pega um spoiler!";
+            
+            const spoilerButton = document.createElement("button");
+            spoilerButton.innerHTML = "Clique para ver o spoiler!";
+            spoilerButton.className = "button";
+            spoilerButton.onclick = function() {
+                window.location.href = "https://vm.tiktok.com/ZMhNmPEXP/";
+            };
+
+            document.querySelector(".container").appendChild(spoilerButton);
+            yesButton.style.display = "none";
+            noButton.style.display = "none";
+        });
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+
+        noButton.addEventListener("touchstart", moveButton);
+        noButton.addEventListener("click", moveButton);  
+    </script>
+
+</body>
+</html>
